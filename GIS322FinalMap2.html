@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f4933eb2f258e1b17a20caee13198cf3 {
+                    position: relative;
+                    width: 1000.0px;
+                    height: 400.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f4933eb2f258e1b17a20caee13198cf3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f4933eb2f258e1b17a20caee13198cf3 = L.map(
+                "map_f4933eb2f258e1b17a20caee13198cf3",
+                {
+                    center: [33.7130104, -112.1819213],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 17,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f536b78d639b768ad865fc131faed2c9 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var tile_layer_2684b25e72604045ca971f696be6aa47 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_74aa7a452f81630f9049d5a0a7602b9b = new L.Control.MiniMap(
+                tile_layer_2684b25e72604045ca971f696be6aa47,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": false, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_f4933eb2f258e1b17a20caee13198cf3.addControl(mini_map_74aa7a452f81630f9049d5a0a7602b9b);
+        
+    
+            var marker_3b136e74d6b8c330546f703b3bb1814d = L.marker(
+                [33.71276887, -112.1828874],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_e04af8696444968ee2e24f447763a42b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_3b136e74d6b8c330546f703b3bb1814d.setIcon(icon_e04af8696444968ee2e24f447763a42b);
+        
+    
+        var popup_921a342eea17d577d306867723a04e61 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42773af7d1a37e2457b547dcbdf6d4e9 = $(`<div id="html_42773af7d1a37e2457b547dcbdf6d4e9" style="width: 100.0%; height: 100.0%;">Species: Mesquite<br>Condition: Good<br>Height: 12<br>Width: 15<br>Salvage Status: Salvagable<br>Reason: This tree can be salvaged</div>`)[0];
+                popup_921a342eea17d577d306867723a04e61.setContent(html_42773af7d1a37e2457b547dcbdf6d4e9);
+            
+        
+
+        marker_3b136e74d6b8c330546f703b3bb1814d.bindPopup(popup_921a342eea17d577d306867723a04e61)
+        ;
+
+        
+    
+    
+            var marker_384c8e1b14bf7cd8612f51f23bec3b58 = L.marker(
+                [33.71296633, -112.182982],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_361da30a9f30886895e2c485aa698ad9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_384c8e1b14bf7cd8612f51f23bec3b58.setIcon(icon_361da30a9f30886895e2c485aa698ad9);
+        
+    
+        var popup_2dc1bf371ff69a4737c19f358fc2e2d8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fa0ac9b14f35690a3f67a9cf7aa6a3ac = $(`<div id="html_fa0ac9b14f35690a3f67a9cf7aa6a3ac" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Fair<br>Height: 15<br>Width: 15<br>Salvage Status: Not Salvagable<br>Reason: Age, Dead Wood, Poor Form</div>`)[0];
+                popup_2dc1bf371ff69a4737c19f358fc2e2d8.setContent(html_fa0ac9b14f35690a3f67a9cf7aa6a3ac);
+            
+        
+
+        marker_384c8e1b14bf7cd8612f51f23bec3b58.bindPopup(popup_2dc1bf371ff69a4737c19f358fc2e2d8)
+        ;
+
+        
+    
+    
+            var marker_d114c87cf794cf86b9fc1869f11f2e8a = L.marker(
+                [33.71297971, -112.1829572],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_e8938cbedc58117a72aafd46e99590af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_d114c87cf794cf86b9fc1869f11f2e8a.setIcon(icon_e8938cbedc58117a72aafd46e99590af);
+        
+    
+        var popup_df73f99dfb9a4de6760d42b22ccaa73c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7bb65d13eb16082cb27dc0c0bcbe9807 = $(`<div id="html_7bb65d13eb16082cb27dc0c0bcbe9807" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Poor<br>Height: 8<br>Width: 8<br>Salvage Status: Not Salvagable<br>Reason: Understory, Poor Form, Proximity</div>`)[0];
+                popup_df73f99dfb9a4de6760d42b22ccaa73c.setContent(html_7bb65d13eb16082cb27dc0c0bcbe9807);
+            
+        
+
+        marker_d114c87cf794cf86b9fc1869f11f2e8a.bindPopup(popup_df73f99dfb9a4de6760d42b22ccaa73c)
+        ;
+
+        
+    
+    
+            var marker_0e5e03b3c628dbf26dd62f62852e254d = L.marker(
+                [33.71296437, -112.1830118],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_ac349d9215ee319a823d2e2ff61918cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_0e5e03b3c628dbf26dd62f62852e254d.setIcon(icon_ac349d9215ee319a823d2e2ff61918cf);
+        
+    
+        var popup_0cebe19a489481b5a88668c8bac60a83 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b82c96d3bdcfd0837d0fe59660969794 = $(`<div id="html_b82c96d3bdcfd0837d0fe59660969794" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Poor<br>Height: 4<br>Width: 8<br>Salvage Status: Not Salvagable<br>Reason: Understory, Poor Form, Proximity</div>`)[0];
+                popup_0cebe19a489481b5a88668c8bac60a83.setContent(html_b82c96d3bdcfd0837d0fe59660969794);
+            
+        
+
+        marker_0e5e03b3c628dbf26dd62f62852e254d.bindPopup(popup_0cebe19a489481b5a88668c8bac60a83)
+        ;
+
+        
+    
+    
+            var marker_47d1b922d771d84affc9f2623cf0e6f4 = L.marker(
+                [33.7127566, -112.1831392],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_7ded3bd2b4ebefc7d5eae1a9baf57220 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_47d1b922d771d84affc9f2623cf0e6f4.setIcon(icon_7ded3bd2b4ebefc7d5eae1a9baf57220);
+        
+    
+        var popup_4b6b6cf60de26b4e1b73fc8a8a68850c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f3dc4630a89cfa07e22d6a6f4bbe20c7 = $(`<div id="html_f3dc4630a89cfa07e22d6a6f4bbe20c7" style="width: 100.0%; height: 100.0%;">Species: Mesquite<br>Condition: Good<br>Height: 8<br>Width: 8<br>Salvage Status: Salvagable<br>Reason: This tree can be salvaged</div>`)[0];
+                popup_4b6b6cf60de26b4e1b73fc8a8a68850c.setContent(html_f3dc4630a89cfa07e22d6a6f4bbe20c7);
+            
+        
+
+        marker_47d1b922d771d84affc9f2623cf0e6f4.bindPopup(popup_4b6b6cf60de26b4e1b73fc8a8a68850c)
+        ;
+
+        
+    
+    
+            var marker_357ce7e7a557023555311b1911497527 = L.marker(
+                [33.71306784, -112.183042],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_99c48debf3e3a57f4ba0a21b4e3c028a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_357ce7e7a557023555311b1911497527.setIcon(icon_99c48debf3e3a57f4ba0a21b4e3c028a);
+        
+    
+        var popup_eedef3ba6b588f670862f55dc55e395f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a4f5c394a9fe69bc1ef30bd20eda1143 = $(`<div id="html_a4f5c394a9fe69bc1ef30bd20eda1143" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Poor<br>Height: 20<br>Width: 15<br>Salvage Status: Not Salvagable<br>Reason: Poor Health, Dying</div>`)[0];
+                popup_eedef3ba6b588f670862f55dc55e395f.setContent(html_a4f5c394a9fe69bc1ef30bd20eda1143);
+            
+        
+
+        marker_357ce7e7a557023555311b1911497527.bindPopup(popup_eedef3ba6b588f670862f55dc55e395f)
+        ;
+
+        
+    
+    
+            var marker_8c17f263b8fdc8bcc19f81f5cca7dfd2 = L.marker(
+                [33.71314091, -112.1830105],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_b5ee699398d83de49937c6e4da7cecf2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_8c17f263b8fdc8bcc19f81f5cca7dfd2.setIcon(icon_b5ee699398d83de49937c6e4da7cecf2);
+        
+    
+        var popup_ec12e5424e3e530c34853b2f9c0676ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_571909cc7d4cc33b177cfed67c39f1ae = $(`<div id="html_571909cc7d4cc33b177cfed67c39f1ae" style="width: 100.0%; height: 100.0%;">Species: Mesquite<br>Condition: Good<br>Height: 12<br>Width: 15<br>Salvage Status: Salvagable<br>Reason: This tree can be salvaged</div>`)[0];
+                popup_ec12e5424e3e530c34853b2f9c0676ee.setContent(html_571909cc7d4cc33b177cfed67c39f1ae);
+            
+        
+
+        marker_8c17f263b8fdc8bcc19f81f5cca7dfd2.bindPopup(popup_ec12e5424e3e530c34853b2f9c0676ee)
+        ;
+
+        
+    
+    
+            var marker_1dad8d88b07e837cc1412a9a3164ace3 = L.marker(
+                [33.71311023, -112.1830896],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_b2d57e034c0f93ad89ce5f63cd7c6b2c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_1dad8d88b07e837cc1412a9a3164ace3.setIcon(icon_b2d57e034c0f93ad89ce5f63cd7c6b2c);
+        
+    
+        var popup_656f5a3b99036445c6313052fd31498e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5f9229d94bc77e4003aeb08cb389033a = $(`<div id="html_5f9229d94bc77e4003aeb08cb389033a" style="width: 100.0%; height: 100.0%;">Species: Mesquite<br>Condition: Good<br>Height: 12<br>Width: 12<br>Salvage Status: Salvagable<br>Reason: This tree can be salvaged</div>`)[0];
+                popup_656f5a3b99036445c6313052fd31498e.setContent(html_5f9229d94bc77e4003aeb08cb389033a);
+            
+        
+
+        marker_1dad8d88b07e837cc1412a9a3164ace3.bindPopup(popup_656f5a3b99036445c6313052fd31498e)
+        ;
+
+        
+    
+    
+            var marker_a3d121070538f0fd2a93b00bb4dcda9b = L.marker(
+                [33.71311023, -112.1830896],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_4ae4bde91592fbfa8c3455e78eeed4b5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_a3d121070538f0fd2a93b00bb4dcda9b.setIcon(icon_4ae4bde91592fbfa8c3455e78eeed4b5);
+        
+    
+        var popup_39886f28a4bd116505ccc4652e1f6f95 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e7bb6b190ce3cdd7eaed527fa9c512f2 = $(`<div id="html_e7bb6b190ce3cdd7eaed527fa9c512f2" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Poor<br>Height: 18<br>Width: 15<br>Salvage Status: Not Salvagable<br>Reason: Poor Health, Dead Wood, Dying</div>`)[0];
+                popup_39886f28a4bd116505ccc4652e1f6f95.setContent(html_e7bb6b190ce3cdd7eaed527fa9c512f2);
+            
+        
+
+        marker_a3d121070538f0fd2a93b00bb4dcda9b.bindPopup(popup_39886f28a4bd116505ccc4652e1f6f95)
+        ;
+
+        
+    
+    
+            var marker_ecac01a76198097b2b8ddc35c8d0e609 = L.marker(
+                [33.71337323, -112.1834943],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_d6975e525559dce8f1120afaced3dce9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_ecac01a76198097b2b8ddc35c8d0e609.setIcon(icon_d6975e525559dce8f1120afaced3dce9);
+        
+    
+        var popup_eb0b2d3d1290198551db607461b722df = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_473017939c03bb41d75079fcc63bbbfc = $(`<div id="html_473017939c03bb41d75079fcc63bbbfc" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Poor<br>Height: 22<br>Width: 18<br>Salvage Status: Not Salvagable<br>Reason: Age, Too Large, Poor Health</div>`)[0];
+                popup_eb0b2d3d1290198551db607461b722df.setContent(html_473017939c03bb41d75079fcc63bbbfc);
+            
+        
+
+        marker_ecac01a76198097b2b8ddc35c8d0e609.bindPopup(popup_eb0b2d3d1290198551db607461b722df)
+        ;
+
+        
+    
+    
+            var marker_49004ddeed9b69c4e14092f1995c3d64 = L.marker(
+                [33.71305278, -112.1835278],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_05f3a0f542b8e2dbeaa63952f81d5ea2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_49004ddeed9b69c4e14092f1995c3d64.setIcon(icon_05f3a0f542b8e2dbeaa63952f81d5ea2);
+        
+    
+        var popup_5b44a54906d8f61264a0e9bca4fb7b14 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4dd654e384d2f58e0f4f39bdc57b12d2 = $(`<div id="html_4dd654e384d2f58e0f4f39bdc57b12d2" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Poor<br>Height: 25<br>Width: 25<br>Salvage Status: Not Salvagable<br>Reason: Age, Dead Wood, Poor Health</div>`)[0];
+                popup_5b44a54906d8f61264a0e9bca4fb7b14.setContent(html_4dd654e384d2f58e0f4f39bdc57b12d2);
+            
+        
+
+        marker_49004ddeed9b69c4e14092f1995c3d64.bindPopup(popup_5b44a54906d8f61264a0e9bca4fb7b14)
+        ;
+
+        
+    
+    
+            var marker_5b438432561f48e931443b8f4221c590 = L.marker(
+                [33.71294792, -112.1836884],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_3bddbd8f57b81194a7306f510a5fee2a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_5b438432561f48e931443b8f4221c590.setIcon(icon_3bddbd8f57b81194a7306f510a5fee2a);
+        
+    
+        var popup_80a6e9937d94997fdfa01f5af0b22d66 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cc288794b098a0da20bfa5043abd54bf = $(`<div id="html_cc288794b098a0da20bfa5043abd54bf" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Fair<br>Height: 22<br>Width: 25<br>Salvage Status: Not Salvagable<br>Reason: Understory, Poor Form, Dead Wood</div>`)[0];
+                popup_80a6e9937d94997fdfa01f5af0b22d66.setContent(html_cc288794b098a0da20bfa5043abd54bf);
+            
+        
+
+        marker_5b438432561f48e931443b8f4221c590.bindPopup(popup_80a6e9937d94997fdfa01f5af0b22d66)
+        ;
+
+        
+    
+    
+            var marker_9da269519c6790cac6d6256378cac1aa = L.marker(
+                [33.7129362, -112.1836468],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_1e1b28dc1bf89eaaf43fb3aa33ca6a40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_9da269519c6790cac6d6256378cac1aa.setIcon(icon_1e1b28dc1bf89eaaf43fb3aa33ca6a40);
+        
+    
+        var popup_7b0dd6ff2f1d0693abf745caed2ef972 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6a50a489b35125d76d79439fe3aced3e = $(`<div id="html_6a50a489b35125d76d79439fe3aced3e" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Poor<br>Height: 20<br>Width: 16<br>Salvage Status: Not Salvagable<br>Reason: Age, Dead Wood, Poor Health</div>`)[0];
+                popup_7b0dd6ff2f1d0693abf745caed2ef972.setContent(html_6a50a489b35125d76d79439fe3aced3e);
+            
+        
+
+        marker_9da269519c6790cac6d6256378cac1aa.bindPopup(popup_7b0dd6ff2f1d0693abf745caed2ef972)
+        ;
+
+        
+    
+    
+            var marker_bba0c7a38c5f78f0bce11e67acf29447 = L.marker(
+                [33.71309183, -112.1840555],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_008be7fefbf1769aa39ac55870ca781d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_bba0c7a38c5f78f0bce11e67acf29447.setIcon(icon_008be7fefbf1769aa39ac55870ca781d);
+        
+    
+        var popup_d94af2ecbae16cc20abbc1172505262f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c196455834536fe99c025bc973cd4aa6 = $(`<div id="html_c196455834536fe99c025bc973cd4aa6" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Poor<br>Height: 8<br>Width: 5<br>Salvage Status: Not Salvagable<br>Reason: Dead Wood, Poor Health, Poor Form</div>`)[0];
+                popup_d94af2ecbae16cc20abbc1172505262f.setContent(html_c196455834536fe99c025bc973cd4aa6);
+            
+        
+
+        marker_bba0c7a38c5f78f0bce11e67acf29447.bindPopup(popup_d94af2ecbae16cc20abbc1172505262f)
+        ;
+
+        
+    
+    
+            var marker_be3f0fab3a79d8d5d97b30b63e02f661 = L.marker(
+                [33.71279397, -112.1841035],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_0330a4921c7282ecf0affad45fbafe19 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_be3f0fab3a79d8d5d97b30b63e02f661.setIcon(icon_0330a4921c7282ecf0affad45fbafe19);
+        
+    
+        var popup_2b8841131169aa451532172b60cfa31b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_252a0474a8fc3210f2c41c17f69cb983 = $(`<div id="html_252a0474a8fc3210f2c41c17f69cb983" style="width: 100.0%; height: 100.0%;">Species: Ironwood<br>Condition: Good<br>Height: 12<br>Width: 8<br>Salvage Status: Salvagable<br>Reason: This tree can be salvaged</div>`)[0];
+                popup_2b8841131169aa451532172b60cfa31b.setContent(html_252a0474a8fc3210f2c41c17f69cb983);
+            
+        
+
+        marker_be3f0fab3a79d8d5d97b30b63e02f661.bindPopup(popup_2b8841131169aa451532172b60cfa31b)
+        ;
+
+        
+    
+    
+            var marker_a5d437880b739e6b03d93242b2b161f2 = L.marker(
+                [33.71274349, -112.1837025],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_3e8e138c234b8d99e9637e91166c329f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_a5d437880b739e6b03d93242b2b161f2.setIcon(icon_3e8e138c234b8d99e9637e91166c329f);
+        
+    
+        var popup_bf341c9849940cf6f02fd56145d4a2fd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8207290265bc363d94fa46c328cfc1bc = $(`<div id="html_8207290265bc363d94fa46c328cfc1bc" style="width: 100.0%; height: 100.0%;">Species: Barrel Cactus<br>Condition: Good<br>Height: 3<br>Width: 0<br>Salvage Status: Salvagable<br>Reason: This tree can be salvaged</div>`)[0];
+                popup_bf341c9849940cf6f02fd56145d4a2fd.setContent(html_8207290265bc363d94fa46c328cfc1bc);
+            
+        
+
+        marker_a5d437880b739e6b03d93242b2b161f2.bindPopup(popup_bf341c9849940cf6f02fd56145d4a2fd)
+        ;
+
+        
+    
+    
+            var marker_e7d2bbc73533a411847490d377ec6363 = L.marker(
+                [33.71253376, -112.1845112],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_c4f20a66c9898c59a5b1d6d7f41825c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_e7d2bbc73533a411847490d377ec6363.setIcon(icon_c4f20a66c9898c59a5b1d6d7f41825c1);
+        
+    
+        var popup_0f23b78387ad0882755017e92204a07a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_756ce855a65d02206903bb863fce41a7 = $(`<div id="html_756ce855a65d02206903bb863fce41a7" style="width: 100.0%; height: 100.0%;">Species: Palo Verde<br>Condition: Fair<br>Height: 30<br>Width: 25<br>Salvage Status: Not Salvagable<br>Reason: Age, Too Large, Poor Form</div>`)[0];
+                popup_0f23b78387ad0882755017e92204a07a.setContent(html_756ce855a65d02206903bb863fce41a7);
+            
+        
+
+        marker_e7d2bbc73533a411847490d377ec6363.bindPopup(popup_0f23b78387ad0882755017e92204a07a)
+        ;
+
+        
+    
+    
+            var marker_dae3d10838e420a2290fe7d6ec71c154 = L.marker(
+                [33.71253376, -112.1845571],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_bf809080a9e0c5dec0214d35a87e4f3f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_dae3d10838e420a2290fe7d6ec71c154.setIcon(icon_bf809080a9e0c5dec0214d35a87e4f3f);
+        
+    
+        var popup_1d5e72883202296b7e8222c1eaa3f930 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_579267ebb228d6b13d6ddea751af8b88 = $(`<div id="html_579267ebb228d6b13d6ddea751af8b88" style="width: 100.0%; height: 100.0%;">Species: Palo Verde<br>Condition: Fair<br>Height: 8<br>Width: 6<br>Salvage Status: Not Salvagable<br>Reason: Understory, Poor Form, Proximity</div>`)[0];
+                popup_1d5e72883202296b7e8222c1eaa3f930.setContent(html_579267ebb228d6b13d6ddea751af8b88);
+            
+        
+
+        marker_dae3d10838e420a2290fe7d6ec71c154.bindPopup(popup_1d5e72883202296b7e8222c1eaa3f930)
+        ;
+
+        
+    
+    
+            var marker_bec39ff1552aee19acdad4bb1f655ffd = L.marker(
+                [33.71257946, -112.1831639],
+                {}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var icon_d17daae62f6d7da36954483c8a489fff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_bec39ff1552aee19acdad4bb1f655ffd.setIcon(icon_d17daae62f6d7da36954483c8a489fff);
+        
+    
+        var popup_b1302c683d94d3a745a6026e86cfa303 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_293ecbae75222207465e1b4a1b506380 = $(`<div id="html_293ecbae75222207465e1b4a1b506380" style="width: 100.0%; height: 100.0%;">Species: Mesquite<br>Condition: Good<br>Height: 10<br>Width: 18<br>Salvage Status: Salvagable<br>Reason: This tree can be salvaged</div>`)[0];
+                popup_b1302c683d94d3a745a6026e86cfa303.setContent(html_293ecbae75222207465e1b4a1b506380);
+            
+        
+
+        marker_bec39ff1552aee19acdad4bb1f655ffd.bindPopup(popup_b1302c683d94d3a745a6026e86cfa303)
+        ;
+
+        
+    
+    
+            var poly_line_58c744a272dd7d3d014df56dff4e642b = L.polyline(
+                [[33.71260676, -112.1846446], [33.7131502, -112.1846022], [33.71350814, -112.183783], [33.71354682, -112.1831228], [33.71354722, -112.1829376], [33.71341843, -112.182829], [33.71334683, -112.1828095], [33.71313084, -112.1828464], [33.71257353, -112.182789], [33.71248727, -112.1846641]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+    
+            var tile_layer_65d0761f0b75ed4b90a2b9d8f89dd0c6 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {"attribution": "Esri", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f4933eb2f258e1b17a20caee13198cf3);
+        
+</script>
+</html>
